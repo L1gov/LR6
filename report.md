@@ -114,3 +114,46 @@
 
 После отмены коммита создана ветка `report` командой `git switch -c report`. Ветка создана от коммита `ab41d40`; при подготовке отчёта она являлась текущей. В ней размещены файл `report.md` и папка `screenshots` с иллюстрациями.
 
+## Лог команд
+
+Ниже приведены выполненные команды без приглашений терминала и результатов выполнения. Сохранены также ошибочные попытки и последующие исправления. Создание файлов на GitHub, редактирование текста и выбор варианта в графическом редакторе выполнялись через интерфейс программ.
+
+```powershell
+git config --global user.name "4515_В.Д.Болотин"
+git config --global user.name
+git config --global user.email "slava.bolotin.07@mail.ru"
+git config --global user.email
+git init
+git remote add origin https://github.com/L1gov/LR6
+git pull origin master
+git fetch origin
+git branch
+git switch adding_file
+git reflog show master
+git reflog show adding_file
+git show
+git switch adding_file
+git add .
+git commit -m "изменена информация в побочной ветке"
+git switch master
+git add .
+git commit -m "изменена информация в основной ветке"
+git merge adding_file
+git add .
+git commit -m "подтянуты изменения из побочной ветки, решен конфликт"
+git branch -D adding_file
+git add .
+git commit -m "новое изменение"
+git add .
+git commit -m "изменение которое нужно откатить"
+git revert --no-edit HEAD
+git switch -c report
+```
+
+## Вывод
+
+В ходе работы настроен Git, получены основная и побочная ветки удалённого репозитория, просмотрены история операций и изменения коммитов. Выполнено слияние с ручным разрешением конфликта, удалена локальная побочная ветка, созданы последовательные коммиты и отменён последний из них командой `revert`. Для оформления результатов создана отдельная ветка `report`.
+
+## Справочный материал
+
+[Синтаксис Markdown на GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
